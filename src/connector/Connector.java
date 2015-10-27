@@ -46,7 +46,7 @@ public class Connector {
     }
     //Update
     public Astroids UpdateAstroids(Astroids updateAstoid){
-        Astroids currentAstroids = ReadAstroids(updateAstoid.getIdAstroid());
+        Astroids currentAstroids = ReadAstroids(updateAstoid.getId_astroid());
         tx.begin();
         em.merge(currentAstroids);
         currentAstroids.setIdAstroid("Nieuw Id");

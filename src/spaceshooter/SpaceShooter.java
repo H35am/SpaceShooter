@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package spaceshooter;
+import java.sql.DriverManager;
+import connector.Connector;
 
 /**
  *
@@ -11,11 +13,20 @@ package spaceshooter;
  */
 public class SpaceShooter {
 
+    
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+      
+        Connector connect = new Connector();
+        Astroids astroid = new Astroids("iets", "nog iets", "extra iets");
+        
+       
+        
     }
+    
     
 }

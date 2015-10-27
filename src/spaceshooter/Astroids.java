@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Astroids.findAll", query = "SELECT a FROM Astroids a"),
     @NamedQuery(name = "Astroids.findByMass", query = "SELECT a FROM Astroids a WHERE a.mass = :mass"),
     @NamedQuery(name = "Astroids.findByVelocity", query = "SELECT a FROM Astroids a WHERE a.velocity = :velocity"),
-    @NamedQuery(name = "Astroids.findByIdAstroid", query = "SELECT a FROM Astroids a WHERE a.idAstroid = :idAstroid")})
+    @NamedQuery(name = "Astroids.findById_astroid", query = "SELECT a FROM Astroids a WHERE a.id_astroid = :id_astroid")})
 public class Astroids implements Serializable {
     private static final long serialVersionUID = 1L;
     @Column(name = "mass")
@@ -36,13 +36,13 @@ public class Astroids implements Serializable {
     @Id
     @Basic(optional = false)
     @Column(name = "id_astroid")
-    private String idAstroid;
+    private String id_astroid;
 
     public Astroids() {
     }
 
-    public Astroids(String idAstroid, String mass, String velocity) {
-        this.idAstroid = idAstroid;
+    public Astroids(String id_astroid, String mass, String velocity) {
+        this.id_astroid = id_astroid;
         this.mass = mass;
         this.velocity = velocity;
     }
@@ -63,18 +63,18 @@ public class Astroids implements Serializable {
         this.velocity = velocity;
     }
 
-    public String getIdAstroid() {
-        return idAstroid;
+    public String getId_astroid() {
+        return id_astroid;
     }
 
     public void setIdAstroid(String idAstroid) {
-        this.idAstroid = idAstroid;
+        this.id_astroid = idAstroid;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idAstroid != null ? idAstroid.hashCode() : 0);
+        hash += (id_astroid != null ? id_astroid.hashCode() : 0);
         return hash;
     }
 
@@ -85,7 +85,7 @@ public class Astroids implements Serializable {
             return false;
         }
         Astroids other = (Astroids) object;
-        if ((this.idAstroid == null && other.idAstroid != null) || (this.idAstroid != null && !this.idAstroid.equals(other.idAstroid))) {
+        if ((this.id_astroid == null && other.id_astroid != null) || (this.id_astroid != null && !this.id_astroid.equals(other.id_astroid))) {
             return false;
         }
         return true;
@@ -93,7 +93,7 @@ public class Astroids implements Serializable {
 
     @Override
     public String toString() {
-        return "spaceshooter.Astroids[ idAstroid=" + idAstroid + " ]";
+        return "spaceshooter.Astroids[ idAstroid=" + id_astroid + " ]";
     }
     
 }
